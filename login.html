@@ -1,107 +1,64 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>login</title>
-  <style type="text/css">
- @import url('https://fonts.googleapis.com/css?family=Raleway:300,400,700');
-
-*{
-  margin: 0;
-  padding: 0;
-  outline: none;
-  box-sizing: border-box;
-  font-family: 'Raleway', sans-serif;
-}
-
-body{ background: #3598dc; }
-
-.cont{
-  position: relative;
-  width: 25%;
-  height: 400px;
-  padding: 10px 25px;
-  margin: 10vh auto;
-  background: #fff;
-  border-radius: 8px;
-}
-
-.form{ width: 100%; height: 100%; }
-
-h1, h2, .user, .pass{ 
-  text-align: center;
-  display: block;
-}
-
-h1{ 
-  color: #606060;
-  font-weight: bold;
-  font-size: 40px;
-  margin: 30px auto;
-}
-
-.user, .pass, .login{
-  width: 100%;
-  height: 45px;
-  border: none;
-  border-radius: 5px;
-  font-size: 20px;
-  font-weight: lighter;
-  margin-bottom: 30px;
-}
-
-.user, .pass{ background: #ecf0f1; }
-
-.login{
-  color: #fff;
-  cursor: pointer;
-  margin-top: 20px;
-  background: #3598dc;
-  transition: background 0.4s ease;
-}
-
-.login:hover{ background: #3570dc; }
-
-@media only screen and (min-width : 280px) {
-  .cont{ width: 90% }
-}
-
-@media only screen and (min-width : 480px) {
-  .cont{ width: 60% }
-}
-
-@media only screen and (min-width : 768px) {
-  .cont{ width: 40% }
-}
-
-@media only screen and (min-width : 992px) {
-  .cont{ width: 30% }
-}
-
-h2{ color: #fff; margin-top: 25px; }
-
-  </style>
+	<title>login</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" type="text/css" href="style_login.css">
+	<script src="https://kit.fontawesome.com/848684728e.js" crossorigin="anonymous"></script>
 </head>
 <body>
 
-
-
-<div class="cont">
-  
-  <div class="form">
-    <form action="index.html">
-      <h1>Login</h1>
-      <input type="text"
-             class="user"
-             placeholder="Username"/>
-      <input type="password" 
-             class="pass"
-             placeholder="Password"/>
-      <button                class="login">Login</button>
-    </form>
-  </div>
-  
- 
+<div class="container" id="container">
+	<div class="form-container sign-up-container">
+		<form action="index.html" name = "myForm" onsubmit="return validatorForm();">
+			<h1>Create Account</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your email for registration</span>
+			<label id="error"  style="color: rgb(253, 38, 0); text-align: center;"></label>
+			<input type="text" placeholder="Name" name = "name" id="name" />
+			<input type="email" placeholder="Email" name = "email" id="email" />
+			<input type="password" placeholder="Password" name = "password" id="password" />
+			<input type="password" placeholder="Confirm Password" name = "password2" id="password2" />
+			<button>Sign Up</button>
+		</form>
+	</div>
+	<div class="form-container sign-in-container">
+		<form action="index.html" name = "myForm" onsubmit = "return(validatorForm2());">
+			<h1>Sign in</h1>
+			<div class="social-container">
+				<a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
+				<a href="#" class="social"><i class="fab fa-google-plus-g"></i></a>
+				<a href="#" class="social"><i class="fab fa-linkedin-in"></i></a>
+			</div>
+			<span>or use your account</span>
+			<label id="error2"  style="color: rgb(253, 38, 0); text-align: center;"></label>
+			<input type="text" placeholder="Username" name = "user" id="user" />
+			<input type="password" placeholder="Password" name = "pass" name="pass" />
+			<a href="#">Forgot your password?</a>
+			<button>Sign In</button>
+		</form>
+	</div>
+	<div class="overlay-container">
+		<div class="overlay">
+			<div class="overlay-panel overlay-left">
+				<h1>One Of US?</h1>
+				<p>If you already have an account, just</p>
+				<button class="ghost" id="signIn">Sign In</button>
+			</div>
+			<div class="overlay-panel overlay-right">
+				<h1>New here?</h1>
+				<p>Sign Up and discover my resume</p>
+				<button class="ghost" id="signUp">Sign Up</button>
+			</div>
+		</div>
+	</div>
 </div>
 
+
+<script type="text/javascript" src="script_login.js"></script>
 </body>
 </html>
