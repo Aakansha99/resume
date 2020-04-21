@@ -74,8 +74,8 @@ let name=document.getElementById("name");
 let email=document.getElementById("email")
 let password=document.getElementById("password");
 let confirmpassword=document.getElementById("password2");
-let user=document.getElementById("user");
-let pass=document.getElementById("pass");
+var mailformat = /^w+([.-]?w+)*@w+([.-]?w+)*(.w{2,3})+$/;
+
 
 
 function validatorForm() {
@@ -90,6 +90,15 @@ function validatorForm() {
         email.style.border= "red solid";
         return false;
     }
+
+  /*  var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+            //var address = document.getElementById[email].value;
+            if (reg.test(email) == false) 
+            {
+                alert('Invalid Email Address');
+                return (false);
+            }*/
+
     else if(password.value === "") {
         document.getElementById("error").innerHTML="*Password Require";
         name.style.border= "silver solid";
@@ -122,17 +131,46 @@ function validatorForm() {
         document.getElementById("error").innerHTML="";
         alert("password must be 8 character long");
         return false ;
-    }
-    else if(password.value!=confirmpassword.value){
+        }
+        else if(password.value!=confirmpassword.value){
         alert("password didn't matched!!!  \nPlease try again");
         return false ;
-    }
+        }
 
-    else{
+        else{
     	alert("Successfully registered");
         return true;
+        }
     }
+}
 
-   
-}
-}
+
+        let user=document.getElementById("user")
+        let pass=document.getElementById("pass");
+
+        function validatorForm2() {
+            if(user.value === "") {
+                document.getElementById("error2").innerHTML="*Email Require";
+                user.style.border= "red solid";
+                return false;
+            }
+
+          /*  if(!user.match(mailformat))
+            {
+                 alert("You have entered a valid email address!");    //The pop up alert for a valid email address
+                 return false;
+            }*/
+
+            if(pass.value === "") {
+                document.getElementById("error2").innerHTML="*Password Require";
+                user.style.border= "silver solid";
+                pass.style.border= "red solid";
+                return false;
+            }
+
+            else{
+                alert("Successfully login");
+                alert("Hello user")
+                return true;
+            }
+        }
